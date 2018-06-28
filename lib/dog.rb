@@ -34,6 +34,7 @@ class Dog
     SQL
     
     DB[:conn].execute(sql, self.name, self.breed)
+    @dog = DB[:conn].execute("SELECT ")
   end 
   
   def self.create 
