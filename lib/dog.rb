@@ -1,3 +1,4 @@
+require 'pry'
 class Dog 
   attr_accessor :id, :name, :breed 
   
@@ -35,6 +36,7 @@ class Dog
     
     DB[:conn].execute(sql, self.name, self.breed)
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs").flatten[0]
+    binding.pry
   end 
   
   def self.create 
