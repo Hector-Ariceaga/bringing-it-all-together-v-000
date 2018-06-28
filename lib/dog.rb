@@ -51,8 +51,9 @@ class Dog
   def self.find_or_create_by
   end 
   
-  def self.new_from_db(*row)
+  def self.new_from_db(row)
     dog = Dog.new(row[0], row[1], row[2])
+    binding.pry
   end
   
   def self.find_by_name
